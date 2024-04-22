@@ -11,13 +11,11 @@
   </head>
 
  <body>
-   <%= yield %>
- </body>
-
-
-  <main>
+   <main>
     <% flash.each do |message_type, message| %>
       <div class="flash-message <%= message_type %>"><%= message %></div>
     <% end %>
-  </main>
+    <%= yield %>
+   </main>
+ </body>
 </html>
