@@ -1,8 +1,8 @@
-<h1>Title</h1>
-<p><%= @book.本のタイトル %></p>
+<h1>Title:</h1>
+<p><%= @book.title %></p>
 
-<h1>Body</h1>
-<p><%= @book.感想 %></p>
+<h1>Body:</h1>
+<p><%= @book.body %></p>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Destroy", destroy_book_path(@book.id), method: :destroy %>
+<a href="/books">Back</a>

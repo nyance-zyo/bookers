@@ -10,12 +10,14 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       flash.now[:notice] = "投稿に失敗しました"
-      render :new
+      @books = Book.all
+      render :index
     end
   end
 
   def index
     @books = Book.all
+    @book = Book.new
   end
 
   def show
@@ -25,6 +27,8 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
   end
+
+
 
   def update
     book = Book.find(params[:id])
@@ -41,6 +45,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:本のタイトル, :感想)
+    params.require(:book).permit(:title, :body)
   end
 end
